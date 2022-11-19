@@ -8,7 +8,6 @@ const app = express();
 let message = [];
 
 app.get('/', function(req, res) {
-  console.log(req);
   res.send('<pre>' + JSON.stringify(message, null, 2) + '</pre>');
 });
 
