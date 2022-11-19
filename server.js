@@ -21,7 +21,7 @@ app.get("/webhooks", (req, res) => {
   let challenge = req.query["hub.challenge"];
 
   if (mode && token) {
-    if (mode == "subscribe" && token === "a6cd02d2-ebb0-4bdc-9073-c886394d1553") {
+    if (mode == "subscribe" && token === process.env.FB_VARIFY_TOKEN) {
       res.status(200).send(challenge);
     } else {
       res.sendStatus(403);
