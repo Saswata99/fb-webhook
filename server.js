@@ -5,7 +5,7 @@ dotenv.config()
 const PORT = process.env.PORT;
 const app = express();
 
-let message;
+let message = [];
 
 app.get('/', function(req, res) {
   console.log(req);
@@ -33,7 +33,7 @@ app.post("/webhooks", (req, res) => {
   let body = req.body;
   if (body) {
     message = body;
-    res.status(200).sendStatus("EVENT_RECEIVED");
+    res.sendStatus(200);
   } else {
     res.sendStatus(404);
   }
