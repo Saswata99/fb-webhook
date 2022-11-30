@@ -7,7 +7,7 @@ const app = express();
 
 let message = [];
 
-app.get('/', function(req, res) {
+app.get('/1', function(req, res) {
   res.send('<pre>' + JSON.stringify(message, null, 2) + '</pre>');
 });
 
@@ -30,6 +30,7 @@ app.get("/webhooks", (req, res) => {
 
 app.post("/webhooks", (req, res) => {
   let body = req.body;
+  console.log(body)
   if (body) {
     message = body;
     res.sendStatus(200);
